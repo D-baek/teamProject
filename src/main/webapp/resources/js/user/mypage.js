@@ -17,7 +17,10 @@ mypage =(()=>{
 				$.getScript(mypage_vue_js)
 			).done(()=>{
 				setContentView()
+				gomodify()
 				gogrape()
+				goroutine()
+				gohelgram()
 			}).fail(()=>{
 				alert('조졌다')
 			})
@@ -29,8 +32,18 @@ mypage =(()=>{
 		$('#mainpage').empty()
 		$('#mainpage').append(mypage_vue.mypage_main())
 	}
+	let gomodify=()=>{
+		$('a[class="myModify"] span'  )
+		.click(e=>{
+			e.preventDefault()
+		$('.masthead').remove()
+		$('.page-footer').remove()
+		$('#mainpage').empty()
+		$('#mainpage').append(mypage_vue.mypage_modify())
+		})
+	}
 	let gogrape =()=>{
-		$('div[class="team-back"] a span'  )
+		$('a[class="myGraph"] span'  )
 		.click(e=>{
 			e.preventDefault()
 		$('.masthead').remove()
@@ -38,6 +51,28 @@ mypage =(()=>{
 		$('#mainpage').empty()
 		$('#mainpage').append(mypage_vue.mypage_graph())
 		})
+	}
+	let goroutine =()=>{
+		$('a[class="myRoutine"] span'  )
+		.click(e=>{
+			e.preventDefault()
+			alert('내 루틴 보기 진입')
+		$('.masthead').remove()
+		$('.page-footer').remove()
+		$('#mainpage').empty()
+		$('#mainpage').append(mypage_vue.mypage_routine())
+		})
+	}
+	let gohelgram =()=>{
+		$('a[class="myHelgram"] span'  )
+		.click(e=>{
+			e.preventDefault()
+			alert('내 헬그램 보기 진입')
+		$('.masthead').remove()
+		$('.page-footer').remove()
+		$('#mainpage').empty()
+		$('#mainpage').append(mypage_vue.mypage_helgram())
+		})		
 	}
 	return{onCreate}
 })()

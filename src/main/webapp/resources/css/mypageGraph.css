@@ -1,9 +1,10 @@
-/*가로막대그래프*/
 body{
-	padding: 60px;
+    padding: 60px;
 }
+/*가로막대그래프*/
 .countEx{
-    width : 330px; height : auto; text-align:center; font-size : 20px; font-weight:bold; margin:0;
+    width : 300px; height : 300px; text-align:center;
+    font-size : 20px; font-weight:bold;
 }
 	.graph {height : 40px; margin: 0 0 10px; background:#ccc; border-radius : 40px;}
 	.graph span {display: block; padding : 0 10px; height: 40px;
@@ -77,7 +78,7 @@ body{
     z-index: 1;
 }
 .progress .progress-left{
-    left: 0;
+    left: 50;
 }
 .progress .progress-bar{
     width: 100%;
