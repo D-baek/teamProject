@@ -21,6 +21,7 @@ mypage =(()=>{
 				gogrape()
 				goroutine()
 				gohelgram()
+				goprotein()
 			}).fail(()=>{
 				alert('조졌다')
 			})
@@ -73,6 +74,17 @@ mypage =(()=>{
 		$('#mainpage').empty()
 		$('#mainpage').append(mypage_vue.mypage_helgram())
 		})		
+	}
+	let goprotein=()=>{
+		$('a[class="myProtein"] span'  )
+		.click(e=>{
+			e.preventDefault()
+			alert('단백질 계산 진입')
+		$('.masthead').remove()
+		$('.page-footer').remove()
+		$('#mainpage').empty()
+		$('#mainpage').append(mypage_vue.mypage_protein())
+		})			
 	}
 	return{onCreate}
 })()

@@ -15,7 +15,7 @@ mypage_vue ={
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="http://placehold.it/110x110/9c27b0/fff?text=Dilip" class="img-fluid" />
+	<img class="img-fluid1" />
 	<h3>회원정보 수정</h3>
 	<p>Modifying member information</p>
 	</div>
@@ -23,6 +23,7 @@ mypage_vue ={
 	<div class="team-back">
 	<a href="#" class ="myModify">
 		<span>
+			<br />
 			비밀번호, 전화번호 등</br>
 			개인정보 수정을 원하신다면</br>
 			이 쪽으로 들어와 주세요!</br>
@@ -37,7 +38,7 @@ mypage_vue ={
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="http://placehold.it/110x110/336699/fff?text=Dilip" class="img-fluid" />
+	<img class="img-fluid2" />
 	<h3>회원 그래프 보기</h3>
 	<p>View Member Graphs</p>
 	</div>
@@ -45,10 +46,10 @@ mypage_vue ={
 	<div class="team-back">
 	<a href="#" class="myGraph">
 		<span>
+		<br />
 		부위 별 운동횟수,</br>
-		단백질 섭취 패턴 등</br>
-		자신만의 운동법과</br>
-		식이요법을 확인해보세요!
+		운동기간, 운동횟수를</br>
+		정리하여 보여드릴게요!</br>
 		</span>
 	</a>
 </div></div></div>
@@ -58,7 +59,7 @@ mypage_vue ={
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="http://placehold.it/110x110/607d8b/fff?text=Dilip" class="img-fluid" />
+	<img class="img-fluid3" />
 	<h3>내 루틴 보러가기</h3>
 	<p>Check my routine</p>
 	</div>
@@ -66,9 +67,10 @@ mypage_vue ={
 	<div class="team-back">
 	<a href="#" class="myRoutine">
 		<span>
+		<br />
 		내가 받은 루틴을 확인하고<br/>
-		열심히 운동하러<br />
-		출발해보아요!!
+		열심히 운동해서<br />
+		헬린이 탈추우우울!!!
 		</span>
 	</a>
 	</div>
@@ -80,14 +82,14 @@ mypage_vue ={
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="http://placehold.it/110x110/4caf50/fff?text=Dilip" class="img-fluid" />
+	<img class="img-fluid4" />
 	<h3>내가 작성한 헬그램 보러가기</h3>
 	<p>Go see my helgram</p>
 	</div>
-	
 	<div class="team-back">
 	<a href="#" class="myHelgram">
 		<span>
+		<br />
 		지금까지 회원님께서<br />
 		작성한 게시글들을<br />
 		확인하러 가 볼까요?~ :)
@@ -102,18 +104,20 @@ mypage_vue ={
 	<div class="our-team-main">
 	
 	<div class="team-front">
-	<img src="http://placehold.it/110x110/e91e63/fff?text=Dilip" class="img-fluid" />
-	<h3>Dilip Kevat</h3>
-	<p>Web Designer</p>
+	<img class="img-fluid5" />
+	<h3>단백질 계산 및 섭취</h3>
+	<p>protein calculation and ingestion</p>
 	</div>
 	
 	<div class="team-back">
-	<span>
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque penatibus et magnis dis parturient montes,
-	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-	natoque.
-	</span>
+	<a href="#" class="myProtein">
+		<span>
+		<br />
+		몸 스펙에 맞춰 계산 된<br />
+		충분한 단백질 섭취로<br />
+		근손실 걱정은 손저어어얼!!
+		</span>
+	</a>
 	</div>
 	
 	</div>
@@ -154,20 +158,20 @@ mypage_vue ={
                     <form method="POST" id="myModify-form" class="myModify-form">
                         <h2 class="form-title">개인정보를 바꾸시려구요?</h2>
                         <div class="form-group">
-                            <input type="password" class="form-input" name="passwd" id="passwd" placeholder="기존 비밀번호를 입력하세요."/>
+                            <input type="password" class="form-input" name="oldpwd" id="oldpwd" placeholder="기존 비밀번호를 입력하세요."/>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="새 비밀번호를 입력하세요."/>
+                            <input type="password" class="form-input" name="newpwd" id="newpwd" placeholder="새 비밀번호를 입력하세요."/>
 						</div>
 						 <div class="form-group">
-                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="새 비밀번호를 확인합니다."/>
+                            <input type="password" class="form-input" name="re_pwd" id="re_pwd" placeholder="새 비밀번호를 확인합니다."/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="uname" id="uname" placeholder="이름을 입력하세요."/>
+                            <input type="text" class="form-input" name="uname" id="newName" placeholder="이름을 입력하세요."/>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                          <div class="form-group">
-                            <input type="text" class="form-input" name="age" id="age" placeholder="나이를 입력하세요."/>
+                            <input type="text" class="form-input" name="age" id="newAge" placeholder="나이를 입력하세요."/>
                         </div>
                         <fieldset class="form-group">
                         <div class="row">
