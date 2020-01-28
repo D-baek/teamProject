@@ -18,7 +18,7 @@ mypage =(()=>{
 			).done(()=>{
 				setContentView()
 				gomodify()
-				gogrape()
+				gochart()
 				goroutine()
 				gohelgram()
 				goprotein()
@@ -43,14 +43,60 @@ mypage =(()=>{
 		$('#mainpage').append(mypage_vue.mypage_modify())
 		})
 	}
-	let gogrape =()=>{
-		$('a[class="myGraph"] span'  )
+	let gochart =()=>{
+		$('a[class="myChart"] span'  )
 		.click(e=>{
 			e.preventDefault()
 		$('.masthead').remove()
 		$('.page-footer').remove()
 		$('#mainpage').empty()
-		$('#mainpage').append(mypage_vue.mypage_graph())
+		$('#mainpage').append(mypage_vue.mypage_chart())
+		var ctx1 = $('#myChart1');
+		var myPieChart = new Chart(ctx1,{
+			type : 'pie',
+			data :{
+				labels : ['Chest', 'Back', 'Shoulder', 'Biceps', 'Triceps', 'Legs', 'Abdominals'],
+				datasets : [{
+					label: '부위 별 운동 횟수',
+					data : [12, 6, 5, 8, 5, 2, 6],
+					backgroundColor : ['#f5bd4f', '#f08530', '#d85348', '#861e52', '#15567e', '#23a8c0', '#38af9b'],
+					
+				}]
+			},
+			options:{
+				maintainAspectRatio : false,
+			}
+		})
+		var ctx2 = $('#myChart2');
+		var ctx3 = $('#myChart3');
+		var ctx4 = $('#myChart4');
+		var myLineChart = new Chart(ctx4, {
+			type: 'line',
+			data: {
+				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+				datasets: [	{
+					label: '내 월 별 근골격량',
+					data: [0, 10, 5, 2, 20, 30, 45, 25, 35, 65, 23 ,11],
+					backgroundColor: '#ff0066',
+					borderColor: 'rgb(200, 0, 0)',
+					borderWidth : 1,
+					pointRadius : 5,
+					pointHoverRadius : 10,
+					pointBorderColor: 'yellow'
+					},
+					{label: '회원 평균 근골격량',
+					borderColor: '#0000ff',
+					data: [35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35],
+					pointRadius : 5,
+					pointHoverRadius : 10,
+					fill:false
+					}]
+			},
+			// Configuration options go here
+			options: {
+				maintainAspectRatio : false,
+				}
+			});
 		})
 	}
 	let goroutine =()=>{
@@ -68,7 +114,6 @@ mypage =(()=>{
 		$('a[class="myHelgram"] span'  )
 		.click(e=>{
 			e.preventDefault()
-			alert('내 헬그램 보기 진입')
 		$('.masthead').remove()
 		$('.page-footer').remove()
 		$('#mainpage').empty()

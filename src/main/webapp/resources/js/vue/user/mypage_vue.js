@@ -39,16 +39,17 @@ mypage_vue ={
 	
 	<div class="team-front">
 	<img class="img-fluid2" />
-	<h3>회원 그래프 보기</h3>
+	<h3>회원 차트 보기</h3>
 	<p>View Member Graphs</p>
 	</div>
 	
 	<div class="team-back">
-	<a href="#" class="myGraph">
+	<a href="#" class="myChart">
 		<span>
 		<br />
-		부위 별 운동횟수,</br>
-		운동기간, 운동횟수를</br>
+		회원님의 운동정보,</br>
+		운동기간, 운동횟수 등</br>
+		모든 정보를 각종 차트로<br />
 		정리하여 보여드릴게요!</br>
 		</span>
 	</a>
@@ -105,8 +106,8 @@ mypage_vue ={
 	
 	<div class="team-front">
 	<img class="img-fluid5" />
-	<h3>단백질 계산 및 섭취</h3>
-	<p>protein calculation and ingestion</p>
+	<h3>식단 관리</h3>
+	<p>Diet management</p>
 	</div>
 	
 	<div class="team-back">
@@ -114,8 +115,10 @@ mypage_vue ={
 		<span>
 		<br />
 		몸 스펙에 맞춰 계산 된<br />
-		충분한 단백질 섭취로<br />
-		근손실 걱정은 손저어어얼!!
+		하루섭취 단백질량과<br />
+		관련 음식 조리법으로<br />
+		맛있는 다이어트<br />
+		가즈아아아아아아!!
 		</span>
 	</a>
 	</div>
@@ -197,59 +200,79 @@ mypage_vue ={
         </section>
     </div>`
 	},
+	mypage_chart : ()=>{
+		return `
+		<link rel="stylesheet" href="/web/resources/css/mypageChart.css"/>
+
+		<div class="chartMain">
+			<div class="chart1">
+				<canvas id="myChart1"></canvas>
+			</div>
+			<div class="chart2">
+				<canvas  id="myChart2"></canvas>
+			</div>
+			<div class="chart3">
+				<canvas id="myChart3"></canvas>
+			</div>
+			<div class="chart4">
+				<canvas id="myChart4"></canvas>
+			</div>
+		</div>`
+	},
 	mypage_graph: ()=>{
 		return `
 		<link rel="stylesheet" href="/web/resources/css/mypageGraph.css"/>
-<div class ="graphs" style=" width: 1000px;
-											display: grid;
-											grid-template-rows: 350px 500px;
-											grid-template-columns: repeat(3, 1fr);">
+		<div class ="graphs">
+		<!--프로그래스 바-->
 
-	<!--가로막대그래프-->
-		<div class="countEx">부위 별 운동 횟수
-			<div class="graph stack1">
-				<span style="width: 75%">가슴 75회</span>
-			</div>
-			<div class="graph stack2">
-				<span style="width: 25%">등 25회</span> 
-			</div>
-			<div class="graph stack3">
-				<span style="width: 33%">어깨 33회</span>
-			</div>
-			<div class="graph stack4">
-				<span style="width: 45%">이두 45회</span>
-			</div>
-			<div class="graph stack5">
-				<span style="width: 51%">삼두 51회</span>
-			</div>
-			<div class="graph stack6">
-				<span style="width: 34%">하체 34회</span>
-			</div>
-			<div class="graph stack7">
-				<span style="width: 85%">코어 85회</span>
-			</div>
-		</div>
-	<!--프로그래스 바-->
-	
-<div class="rateEx" style="  text-align:center;
-											font-size : 20px;
-											font-weight:bold;">월 운동량 달성률
+		<div class="rateEx" style="  text-align:center; font-size : 20px; font-weight:bold;">월 운동량 달성률
 		<div class="row">
-			<div class="col-md-3 col-sm-6">
-				<div class="progress blue">
-					<span class="progress-left">
-						<span class="progress-bar"></span>
-					</span>
-					<span class="progress-right">
-						<span class="progress-bar"></span>
-					</span>
-					<div class="progress-value">90%</div>
-				</div>
-			</div>
+		<div class="col-md-3 col-sm-6">
+		<div class="progress blue">
+		<span class="progress-left">
+		<span class="progress-bar"></span>
+		</span>
+		<span class="progress-right">
+		<span class="progress-bar"></span>
+		</span>
+		<div class="progress-value">90%</div>
 		</div>
-	</div>
+		</div>
+		</div>
+		</div>
+											
+<!--가로막대그래프-->
 
-</div>
+	<div class="countEx">부위 별 운동 횟수
+	<div class="graph stack1">
+		<span style="width: 75%; align-content: center;">가슴 75회</span>
+	</div>
+	<div class="graph stack2">
+		<span style="width: 90%">등 90회</span> 
+	</div>
+	<div class="graph stack3">
+		<span style="width: 33%">어깨 33회</span>
+	</div>
+	<div class="graph stack4">
+		<span style="width: 45%">이두 45회</span>
+	</div>
+	<div class="graph stack5">
+		<span style="width: 51%">삼두 51회</span>
+	</div>
+	<div class="graph stack6">
+		<span style="width: ${x.number}%">하체 ${x.number}회</span>
+	</div>
+	<div class="graph stack7">
+		<span style="width: 85%">코어 85회</span>
+	</div>
+		</div>
+
+		<!--3번째 블록-->
+		<div>달력 블록</div>
+
+		<!--차트그래프-->
+		<div class="chartGraph">잘 들어갔냐</div>
+</div><!--lastGraph-->
 		`
 	},
 	mypage_routine :()=>{
@@ -258,6 +281,78 @@ mypage_vue ={
 	},
 	mypage_helgram:()=>{
 		return `
+		<link rel="stylesheet" href="/web/resources/css/mypageHelgram.css"/>
+		
+		 <section class="hero">
+         <div class="container">
+          <div class="row">	
+		  
+		   <div class="col-lg-6 offset-lg-3">
+			
+			<div class="cardbox shadow-lg bg-white">
+			 
+			 <div class="cardbox-heading">
+			  <!-- START dropdown-->
+			  <div class="dropdown float-right">
+			   <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown" aria-expanded="false">
+				<em class="fa fa-ellipsis-h"></em>
+			   </button>
+			   <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu" style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
+				<a class="dropdown-item" href="#">Hide post</a>
+				<a class="dropdown-item" href="#">Stop following</a>
+				<a class="dropdown-item" href="#">Report</a>
+			   </div>
+			  </div><!--/ dropdown -->
+			  <div class="media m-0">
+			   <div class="d-flex mr-3">
+				<a href=""><img class="img-fluid rounded-circle" src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/4.jpg" alt="User"></a>
+			   </div>
+			   <div class="media-body">
+			    <p class="m-0">Benjamin Robinson</p>
+				<small><span><i class="icon ion-md-pin"></i> Nairobi, Kenya</span></small>
+				<small><span><i class="icon ion-md-time"></i> 10 hours ago</span></small>
+			   </div>
+			  </div><!--/ media -->
+			 </div><!--/ cardbox-heading -->
+			  
+			 <div class="cardbox-item">
+			  <img class="img-fluid" src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/1.jpg" alt="Image">
+			 </div><!--/ cardbox-item -->
+			 <div class="cardbox-base">
+			  <ul class="float-right">
+			   <li><a><i class="fa fa-comments"></i></a></li>
+			   <li><a><em class="mr-5">12</em></a></li>
+			   <li><a><i class="fa fa-share-alt"></i></a></li>
+			   <li><a><em class="mr-3">03</em></a></li>
+			  </ul>
+			  <ul>
+			   <li><a><i class="fa fa-thumbs-up"></i></a></li>
+			   <li><a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/3.jpeg" class="img-fluid rounded-circle" alt="User"></a></li>
+			   <li><a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/1.jpg" class="img-fluid rounded-circle" alt="User"></a></li>
+			   <li><a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/5.jpg" class="img-fluid rounded-circle" alt="User"></a></li>
+			   <li><a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/2.jpg" class="img-fluid rounded-circle" alt="User"></a></li>
+			   <li><a><span>242 Likes</span></a></li>
+			  </ul>			   
+			 </div><!--/ cardbox-base -->
+			 <div class="cardbox-comments">
+			  <span class="comment-avatar float-left">
+			   <a href=""><img class="rounded-circle" src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/6.jpg" alt="..."></a>                            
+			  </span>
+			  <div class="search">
+			   <input placeholder="Write a comment" type="text">
+			   <button><i class="fa fa-camera"></i></button>
+			  </div><!--/. Search -->
+			 </div><!--/ cardbox-like -->			  
+					
+			</div><!--/ cardbox -->
+
+           </div><!--/ col-lg-6 -->	
+		   <div class="col-lg-3">
+		   </div><!--/ col-lg-3 -->
+			
+          </div><!--/ row -->
+         </div><!--/ container -->
+        </section>
 		`
 	}
 }

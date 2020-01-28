@@ -4,7 +4,10 @@ main_home = (() => {
 	let navi_vue_js //네비 
 	let main_js, footer_js //메인화면,footer
 	let join_js //회원가입 페이지 이동
+	let routine_js //루틴 페이지이동
+	let brd_js //게시판 화면 
 	let mypage_js
+	let center_js
 
 	let init = () => {
 		context = $.ctx()
@@ -15,7 +18,10 @@ main_home = (() => {
 		footer_js = js + '/vue/menu/footer.js'
 		app_js = js + '/app.js'
 		join_js = js + '/user/join.js'
-		mypage_js=js+'/user/mypage.js'
+		routine_js = js + '/user/routine.js'
+		brd_js = js + '/brd/brd.js'
+		mypage_js = js + '/user/mypage.js'
+		center_js = js + '/user/center.js'
 	}
 	let onCreate = () => {
 		init()
@@ -25,7 +31,10 @@ main_home = (() => {
 			$.getScript(footer_js),
 			$.getScript(app_js),
 			$.getScript(join_js),
-			$.getScript(mypage_js)
+			$.getScript(routine_js),
+			$.getScript(brd_js),
+			$.getScript(mypage_js),
+			$.getScript(center_js)
 		)
 		.done(() => {
 			setContentView()
@@ -34,6 +43,7 @@ main_home = (() => {
 		.fail(() => {})
 	}
 	let setContentView = () => {
+		// $('head').html(navi_vue.main_head({js : $.js(),css : $.css()}))
 		$('#wrapper').html(navi_vue.toolbar())
 			.append(navi_vue.toolbar_sub())
 			.append(`<div id="mainpage" class="content" style="margin-top : 50px;"></div>`)
@@ -59,24 +69,26 @@ main_home = (() => {
 				auth.onCreate()
 			})
 	}
-	let navi_move = () => {
+	let navi_move =()=> {
 		$('#join').click(e=>{
 			e.preventDefault()
 			join.onCreate()
-
 		})
 		$('#login').click(e => {
 			e.preventDefault()
 			auth.onCreate()
 		})
-		$('#mypage').click(e => {
-			e.preventDefault()
-			mypage.onCreate()
+		$('#mypage').click(() =>{ mypage.onCreate() })
+		$('#routine').click(function(){ 
+			routine.onCreate()
 		 })
-		$('#routine').click(() => { alert('루틴') })
-		$('#article').click(() => { alert('게시판') })
-		$('#center').click(() => { alert('센터') })
+		$('#article').click(function(){
+			brd.onCreate()
+		})
+		$('#center').click(() => { 
+			alert('센터')
+			center.onCreate()
+		})
 	}
-	return { onCreate }
+	return { onCreate , navi_move }
 })()
-
