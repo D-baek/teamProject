@@ -168,6 +168,14 @@ mypage_vue ={
 						</div>
 						 <div class="form-group">
                             <input type="password" class="form-input" name="re_pwd" id="re_pwd" placeholder="새 비밀번호를 확인합니다."/>
+						</div>
+						 <div class="form-group">
+                            <input type="text" class="form-input" name="height" id="newHeight" placeholder="키를 입력하세요."/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+						</div>
+						<div class="form-group">
+                            <input type="text" class="form-input" name="weight" id="newWeight" placeholder="체중을 입력하세요."/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="uname" id="newName" placeholder="이름을 입력하세요."/>
@@ -177,19 +185,6 @@ mypage_vue ={
                             <input type="text" class="form-input" name="age" id="newAge" placeholder="나이를 입력하세요."/>
                         </div>
                         <fieldset class="form-group">
-                        <div class="row">
-                            <legend class="col-form-label col-sm-2 pt-0">성별</legend>
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                <label class="form-check-label" for="gridRadios1">남성</label>
-                                </div>
-                                <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                <label class="form-check-label" for="gridRadios2">여성</label>
-                                </div>
-                        </div>
-                        </div>
                         </fieldset>
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Modify up"/>
@@ -209,10 +204,56 @@ mypage_vue ={
 				<canvas id="myChart1"></canvas>
 			</div>
 			<div class="chart2">
-				<canvas  id="myChart2"></canvas>
+				<div id="chart-container"></div>
 			</div>
 			<div class="chart3">
-				<canvas id="myChart3"></canvas>
+			  <div class="main">
+					<div class="content-wrap">
+					<div class="content-left">
+						<div class="main-wrap">
+						<div id="main-day" class="main-day"></div>
+						<div id="main-date" class="main-date"></div>
+						</div>
+						<div class="todo-wrap">
+						<div class="todo-title">Todo List</div>
+						<div class="input-wrap">
+							<input type="text" placeholder="please write here!!" id="input-box" class="input-box">
+							<button type="button" id="input-data" class="input-data">INPUT</button>
+							<div id="input-list" class="input-list"></div>
+						</div>
+						</div>
+					</div>
+					<div class="content-right">
+						<table id="calendar" align="center">
+						<thead>
+							<tr class="btn-wrap clearfix">
+							<td>
+								<label id="prev">
+									&#60;
+								</label>
+							</td>
+							<td align="center" id="current-year-month" colspan="5"></td>
+							<td>
+								<label id="next">
+									&#62;
+								</label>
+							</td>
+							</tr>
+							<tr>
+								<td class = "sun" align="center">Sun</td>
+								<td align="center">Mon</td>
+								<td align="center">Tue</td>
+								<td align="center">Wed</td>
+								<td align="center">Thu</td>
+								<td align="center">Fri</td>
+								<td class= "sat" align="center">Sat</td>
+							</tr>
+						</thead>
+						<tbody id="calendar-body" class="calendar-body"></tbody>
+						</table>
+					</div>
+					</div>
+				</div>
 			</div>
 			<div class="chart4">
 				<canvas id="myChart4"></canvas>

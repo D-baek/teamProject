@@ -43,6 +43,8 @@ center = (()=>{
 		// 	searchPlaces(dt,map)
 		// })
 		searchPlaces('마포구 헬스장',map)
+		searchPlaces('서대문구 헬스장',map)
+		searchPlaces('일산동구 헬스장',map)
 		
 	}
 	let searchPlaces = (x,map) =>{
